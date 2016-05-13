@@ -5,7 +5,7 @@ var path = require('path');
 var calcHolder;
 var answer;
 
-app.set('port', 3000);
+app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
