@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+}
+
+.calccontainer{
+  background-color: Chartreuse;
+  width:80%;
+  height: 100px;
+  margin:auto;
+  text-align: right;
+  font-size: 80px;
+  font-family: 'Press Start 2P';
+}
+
+.btn {
+  margin: auto;
+  width: 20%;
+  height: 50px;
+}
+
+.inputs{
+  padding: 20px;
+  margin-left: 4%;
+}
+
+.container {
+  background-color: grey;
+}

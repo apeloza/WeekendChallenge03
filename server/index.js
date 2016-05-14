@@ -2,34 +2,12 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-var calcHolder;
-var answer;
+var math = require('./routes/math');
 
 app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.urlencoded({extended: true}));
-
-app.post('/calc', function(req, res) {
-  calcHolder = req.body;
-  switch(calcHolder.type){
-    case '+':
-    answer = Number(calcHolder.x) + Number(calcHolder.y);
-    break;
-    case '-':
-    answer = Number(calcHolder.x) - Number(calcHolder.y);
-    break;
-    case '*':
-    answer = Number(calcHolder.x) * Number(calcHolder.y);
-    break;
-    case '/':
-    answer = Number(calcHolder.x) / Number(calcHolder.y);
-    break;
-    default:
-    alert("Something went horribly wrong!");
-  }
-
-  res.send(answer.toString());
-});
+app.use('/math', math);
 
 app.get('/*', function(req, res) {
   console.log('request params', req.params);

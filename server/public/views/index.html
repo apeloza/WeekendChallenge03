@@ -1,28 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Calculator</title>
-  <script src="/assets/vendors/jquery.min.js"></script>
-  <script src="/scripts/calc.js"></script>
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/styles/main.css" />
+    <script src="/assets/vendors/jquery.min.js"></script>
+    <script src="/scripts/calc.js"></script>
 </head>
 
 <body>
-  <h1>Calculator Weekend Challenge</h1>
-  <div id ="inputNums">
-  </div>
-  <div id="operators">
-    <button data-op = "+" class="op">+</button>
-    <button data-op = "-" class="op">-</button>
-    <button data-op = "*" class="op">x</button>
-    <button data-op = "/" class="op">/</button>
-    <button id="calculate">=</button>
-    <button class = "clear">C</button>
-  </div>
-  <div class="calccontainer">
-    <span id = "num1"></span><span id = "operator"></span><span id="num2"></span>
-  </div>
-  <div class="answer-container">
-    
-  </div>
+    <div class="container col-md-6">
+
+        <h1>Calculator Weekend Challenge</h1>
+        <div class="row">
+
+        <div class="display">
+          <div class = "calccontainer">
+<div id = "num">
+</div>
+          </div>
+        </div>
+        </div>
+        <div class="inputs">
+
+          <div class="row">
+            <button class="clear btn btn-warning">C</button>
+            <button class="toggleneg btn btn-info">+/-</button>
+            <button data-op="divide" class="op btn btn-primary">/</button>
+            <button data-op="multiply" class="op btn btn-primary">x</button>
+
+          </div>
+            <div class="row">
+                <button class="numbtn btn btn-default" id="7">7</button>
+                <button class="numbtn btn btn-default" id="8">8</button>
+                <button class="numbtn btn btn-default" id="9">9</button>
+                <button data-op="minus" class="op btn btn-primary">-</button>
+            </div>
+            <div class="row">
+                <button class="numbtn btn btn-default" id="4">4</button>
+                <button class="numbtn btn btn-default" id="5">5</button>
+                <button class="numbtn btn btn-default" id="6">6</button>
+                <button data-op="plus" class="op btn btn-primary">+</button>
+            </div>
+            <div class="row">
+                <button class="numbtn btn btn-default" id="1">1</button>
+                <button class="numbtn btn btn-default" id="2">2</button>
+                <button class="numbtn btn btn-default" id="3">3</button>
+            </div>
+            <div class="row">
+                <button class="numbtn btn btn-default" id="0">0</button>
+                <button class="decbtn btn btn-default" id=".">.</button>
+                <button class = "btn btn-success" id="calculate">=</button>
+            </div>
+        </div>
+
+
+    </div>
 </body>
+
 </html>
