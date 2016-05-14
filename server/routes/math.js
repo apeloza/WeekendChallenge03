@@ -27,4 +27,8 @@ router.post('/plus', function(req,res) {
   res.send(answer.toString());
 });
 
+router.post('/default', function(req,res) {
+
+  res.send('Err');
+});
 module.exports = router;
