@@ -1,23 +1,51 @@
+var num1 = '';
+var num2 = '';
+var type = 0;
 $(document).ready(function(){
 
+for (var i = 0; i < 10; i++){
+$('#inputNums').append('<button class = "numbtn" id = "' + i + '">' + i + '</button>')
+}
+
+$('#inputNums').on('click', '.numbtn', saveNum);
 //Listens for a click on an operator, then fetches data from the DOM.
 $('.op').on('click', function(){
-  event.preventDefault();
-  var x = $('#num1').val();
-  var y = $('#num2').val();
-  var type = $(this).data('op');
-  postCalc(toObj(x,y,type));
-});
 
+ type = $(this).data('op');
+ $('#operator').text(type);
+  //postCalc(toObj(x,y,type));
+});
+$('#calculate').on('click',postCalc);
 //Clears the fields on click of the C button.
-$('.clear').on('click', clearFields);
+$('.clear').on('click', clearAll);
 
 });
 
+function saveNum (){
+if (type === 0){
+  num1 += $(this).attr('id');
+  $('#num1').text(num1);
+} else {
+  num2 += $(this).attr('id');
+  $('#num2').text(num2);
+}
+}
 //Empties all fields that contain data the user has manipulated.
 function clearFields(){
   $('#num1').empty();
   $('#num2').empty();
+  $('#operator').empty();
+  num1 = '';
+  num2 = '';
+  type = 0;
+}
+function clearAll(){
+  $('#num1').empty();
+  $('#num2').empty();
+  $('#operator').empty();
+  num1 = '';
+  num2 = '';
+  type = 0;
   $('.answer-container').empty();
 }
 
@@ -32,14 +60,15 @@ function toObj(x, y, type){
 }
 
 //Sends an equation object to the server, then appends the answer from the server to the DOM.
-function postCalc(calculation){
+function postCalc(){
 
 $.ajax({
 type: 'POST',
 url: '/calc',
-data: calculation,
+data: toObj(num1,num2,type),
 success: function(answer){
 $('.answer-container').text(answer);
+clearFields();
 }
 
 });

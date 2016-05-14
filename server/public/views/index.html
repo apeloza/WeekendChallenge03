@@ -8,19 +8,21 @@
 
 <body>
   <h1>Calculator Weekend Challenge</h1>
-  <form id ="inputNums">
-    <label for="num1">Num 1:</label>
-    <input type="number" id ="num1" name="num1" />
-    <label for="num2">Num 2:</label>
-    <input type="number" id="num2" name="num2" />
-  </form>
-  <form id="operators">
+  <div id ="inputNums">
+  </div>
+  <div id="operators">
     <button data-op = "+" class="op">+</button>
     <button data-op = "-" class="op">-</button>
     <button data-op = "*" class="op">x</button>
     <button data-op = "/" class="op">/</button>
+    <button id="calculate">=</button>
     <button class = "clear">C</button>
-  </form>
-  <p class="answer-container"> </p>
+  </div>
+  <div class="calccontainer">
+    <span id = "num1"></span><span id = "operator"></span><span id="num2"></span>
+  </div>
+  <div class="answer-container">
+    
+  </div>
 </body>
 </html>
