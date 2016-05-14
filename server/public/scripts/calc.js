@@ -1,6 +1,6 @@
 $(document).ready(function(){
-var type;
 
+//Listens for a click on an operator, then fetches data from the DOM.
 $('.op').on('click', function(){
   event.preventDefault();
   var x = $('#num1').val();
@@ -9,16 +9,19 @@ $('.op').on('click', function(){
   postCalc(toObj(x,y,type));
 });
 
+//Clears the fields on click of the C button.
 $('.clear').on('click', clearFields);
 
 });
 
+//Empties all fields that contain data the user has manipulated.
 function clearFields(){
   $('#num1').empty();
   $('#num2').empty();
   $('.answer-container').empty();
 }
 
+//Creates an equation object to be sent to the server
 function toObj(x, y, type){
   var calcObject = {
     x: x,
@@ -27,6 +30,8 @@ function toObj(x, y, type){
   };
   return calcObject;
 }
+
+//Sends an equation object to the server, then appends the answer from the server to the DOM.
 function postCalc(calculation){
 
 $.ajax({
@@ -40,14 +45,3 @@ $('.answer-container').text(answer);
 });
 
 }
-//read in a form's data and convert it to a key:value object
-function getFormData(dom_query){
-    var out = {};
-    var s_data = $(dom_query).serializeArray();
-    //transform into simple data/value object
-    for(var i = 0; i<s_data.length; i++){
-        var record = s_data[i];
-        out[record.name] = record.value;
-    }
-    return out;
-  }
