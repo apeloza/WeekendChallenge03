@@ -25,3 +25,62 @@ h1 {
 .container {
   background-color: grey;
 }
+
+.rainbowbox {
+-webkit-animation:rainbowbox 2s infinite !important;
+-ms-animation:rainbowbox 2s infinite !important;
+-o-animation:rainbowbox 2s infinite !important;
+animation:rainbowbox 2s infinite !important;
+}
+@-webkit-keyframes rainbowbox {
+0% {background-color: #ff0000;}
+10% {background-color: #ff8000;}
+20% {background-color: #ffff00;}
+30% {background-color: #80ff00;}
+40% {background-color: #00ff00;}
+50% {background-color: #00ff80;}
+60% {background-color: #00ffff;}
+70% {background-color: #0080ff;}
+80% {background-color: #0000ff;}
+90% {background-color: #8000ff;}
+100% {background-color: #ff0080;}
+}
+@-ms-keyframes rainbowbox {
+  0% {background-color: #ff0000;}
+  10% {background-color: #ff8000;}
+  20% {background-color: #ffff00;}
+  30% {background-color: #80ff00;}
+  40% {background-color: #00ff00;}
+  50% {background-color: #00ff80;}
+  60% {background-color: #00ffff;}
+  70% {background-color: #0080ff;}
+  80% {background-color: #0000ff;}
+  90% {background-color: #8000ff;}
+  100% {background-color: #ff0080;}
+}
+@-o-keyframes rainbowbox {
+  0% {background-color: #ff0000;}
+  10% {background-color: #ff8000;}
+  20% {background-color: #ffff00;}
+  30% {background-color: #80ff00;}
+  40% {background-color: #00ff00;}
+  50% {background-color: #00ff80;}
+  60% {background-color: #00ffff;}
+  70% {background-color: #0080ff;}
+  80% {background-color: #0000ff;}
+  90% {background-color: #8000ff;}
+  100% {background-color: #ff0080;}
+}
+@keyframes rainbowbox {
+0% {background-color: #ff0000;}
+10% {background-color: #ff8000;}
+20% {background-color: #ffff00;}
+30% {background-color: #80ff00;}
+40% {background-color: #00ff00;}
+50% {background-color: #00ff80;}
+60% {background-color: #00ffff;}
+70% {background-color: #0080ff;}
+80% {background-color: #0000ff;}
+90% {background-color: #8000ff;}
+100% {background-color: #ff0080;}
+}
