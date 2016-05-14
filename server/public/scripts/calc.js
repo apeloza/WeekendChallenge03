@@ -1,21 +1,32 @@
 $(document).ready(function(){
-var num1;
-var num2;
 var type;
-var calcObject = {};
+
 $('.op').on('click', function(){
   event.preventDefault();
-  num1 = getFormData($('#num1'));
-  num2 = getFormData($('#num2'));
-  type = $(this).data('op');
-  console.log(type);
-  calcObject.x = num1.num1;
-  calcObject.y = num2.num2;
-  calcObject.type = type;
-  postCalc(calcObject);
-});
+  var x = $('#num1').val();
+  var y = $('#num2').val();
+  var type = $(this).data('op');
+  postCalc(toObj(x,y,type));
 });
 
+$('.clear').on('click', clearFields);
+
+});
+
+function clearFields(){
+  $('#num1').empty();
+  $('#num2').empty();
+  $('.answer-container').empty();
+}
+
+function toObj(x, y, type){
+  var calcObject = {
+    x: x,
+    y:y,
+    type:type
+  };
+  return calcObject;
+}
 function postCalc(calculation){
 
 $.ajax({
