@@ -63,17 +63,22 @@ function saveNum() {
 //This function handles adding decimals to either number
 function addDecimal() {
 
-    //This if checks to see if num1 or num2 is active, and if num1 or num2 have decimals already.
-    if (type == 'default' && hasDecimal === false) {
+//This loop checks to see if there is a decimal already. If there is, the function immediately exits with a return statement.
+  for (var i = 0; i < $('#num').text().length; i++){
+    if ($('#num').text()[i] == '.'){
+      console.log("True!");
+      return true;
+    }
+  }
+    //This if checks to see if num1 or num2 is active
+    if (type == 'default') {
         num1 += $(this).attr('id');
         $('#num').text(num1);
         fitText();
-        hasDecimal = true;
-    } else if (hasDecimal === false) {
+    } else {
         num2 += $(this).attr('id');
         $('#num').text(num2);
         fitText();
-        hasDecimal = true;
     }
 }
 
