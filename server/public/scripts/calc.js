@@ -1,7 +1,6 @@
 //Global variables are initialized
 var num1 = '';
 var num2 = '';
-var hasDecimal = false;
 var type = 'default';
 var boxfitOptions = {
     align_center: false
