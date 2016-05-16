@@ -94,7 +94,9 @@ function squareRoot() {
     } else {
         $('#num').text('Err');
         fitText();
+        hasDecimal = false;
     }
+
 }
 
 //Empties all fields and variables that contain data the user has manipulated.
